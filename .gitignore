@@ -1,0 +1,6 @@
+*.sln
+*.csproj
+*.sln.ide/
+*.suo
+*.dll
+.bud/output/
