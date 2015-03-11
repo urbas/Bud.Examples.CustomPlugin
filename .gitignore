@@ -4,3 +4,4 @@
 *.suo
 *.dll
 .bud/output/
+.bud/.bud/
