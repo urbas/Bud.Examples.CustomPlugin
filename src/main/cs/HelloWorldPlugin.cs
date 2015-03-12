@@ -1,4 +1,4 @@
-namespace Bud.Examples.CustomPlugin {
+namespace Bud.Examples.HelloWorldPlugin {
   public class HelloWorldPlugin {
     public static readonly TaskKey HelloWorldTask = Key.Define("helloWorld", "Prints a hello world message.");
 
