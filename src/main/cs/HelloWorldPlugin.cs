@@ -1,13 +1,9 @@
 namespace Bud.Examples.HelloWorldPlugin {
-  public static class HelloWorldPlugin {
-    public static readonly TaskKey HelloWorldTask = Key.Define("helloWorld", "Prints a hello world message.");
+  public class HelloWorldPlugin : Plugin {
+    public static readonly TaskKey HelloWorldTask = Key.Define("helloWorld", "Prints a hello world message in the log.");
 
-    public static Setup Enable() {
-      return settings => settings.Globally(HelloWorldTask.InitSync(HelloWorldImpl));
-    }
-
-    public static void HelloWorld(this IContext context) {
-      context.Evaluate(Key.Root / HelloWorldTask);
+    public override Settings Setup(Settings settings) {
+      return settings.AddGlobally(HelloWorldTask.InitSync(HelloWorldImpl));
     }
 
     private static void HelloWorldImpl(IContext context) {
